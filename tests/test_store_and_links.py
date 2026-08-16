@@ -96,14 +96,22 @@ class TestStore(unittest.TestCase):
 
     def test_runs_scanned_accumulates_across_ingests(self):
         self._add(record())
-        self.store.write_index(runs_scanned=5)
-        index = self.store.write_index(runs_scanned=3)
-        self.assertEqual(index["runs_scanned"], 8)
+        self.store.write_index(run_ids=[1, 2, 3])
+        index = self.store.write_index(run_ids=[4, 5])
+        self.assertEqual(index["runs_scanned"], 5)
+
+    def test_rescanning_the_same_runs_does_not_inflate_coverage(self):
+        # Scheduled ingests re-scan overlapping windows, so a run already
+        # counted must not be counted again.
+        self._add(record())
+        self.store.write_index(run_ids=[1, 2, 3])
+        index = self.store.write_index(run_ids=[2, 3, 4])
+        self.assertEqual(index["runs_scanned"], 4)
 
     def test_index_separates_runs_from_occurrences(self):
         self._add(record(run_id=1))
         self._add(record(run_id=2))
-        index = self.store.write_index(runs_scanned=2)
+        index = self.store.write_index(run_ids=[1, 2])
         self.assertEqual(index["total_occurrences"], 2)
         self.assertEqual(index["pattern_count"], 1)
 

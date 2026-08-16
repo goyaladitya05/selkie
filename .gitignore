@@ -6,3 +6,7 @@ venv/
 # Local pattern database; the real one is meant to live on its own branch.
 flake-db/
 *.log.html
+
+# Local scratch notes, not part of the published repo.
+decisions.md
+info.md

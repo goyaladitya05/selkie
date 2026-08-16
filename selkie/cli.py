@@ -81,7 +81,12 @@ def cmd_ingest(args) -> int:
                 if n:
                     _log(f"  {art['name']}: {n} failure(s)")
 
-    index = store.write_index(runs_scanned=len(runs))
+        # Checkpoint after every run. Ingesting a full window takes a while and
+        # can be cut short by a timeout or rate limit; the work already done
+        # should survive, and the run count should stay truthful.
+        index = store.write_index(run_ids=[run_id])
+
+    index = store.write_index()
     _log("")
     _log(
         f"ingested {total_failures} failures into {len(seen_hashes)} distinct "

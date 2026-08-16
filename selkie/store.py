@@ -143,23 +143,26 @@ class Store:
         self.save(pattern)
         return pattern, is_new
 
-    def write_index(self, runs_scanned: int | None = None) -> dict:
+    def write_index(self, run_ids: list[int] | None = None) -> dict:
         patterns = self.all_patterns()
 
-        # Runs scanned accumulates across ingests and is distinct from the
-        # occurrence count; conflating the two overstates coverage.
-        previous = 0
+        # Coverage is tracked as the set of run IDs seen, not a running total.
+        # Scheduled ingests re-scan overlapping windows, so counting runs would
+        # inflate the figure every time the tool runs.
+        seen: set[int] = set()
         index_path = self.root / "index.json"
         if index_path.exists():
             try:
-                previous = json.loads(index_path.read_text()).get("runs_scanned", 0)
+                seen = set(json.loads(index_path.read_text()).get("run_ids", []))
             except json.JSONDecodeError:
-                previous = 0
+                seen = set()
+        seen.update(run_ids or [])
 
         index = {
             "schema_version": SCHEMA_VERSION,
             "pattern_count": len(patterns),
-            "runs_scanned": previous + (runs_scanned or 0),
+            "runs_scanned": len(seen),
+            "run_ids": sorted(seen),
             "total_occurrences": sum(p.count for p in patterns),
             "categories": dict(
                 Counter(p.category or "uncategorized" for p in patterns)

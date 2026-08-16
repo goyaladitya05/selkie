@@ -90,6 +90,14 @@ class Client:
                     time.sleep(delay)
                     continue
                 raise GitHubError(f"{e.code} {e.reason} for {url}") from e
+            except (urllib.error.URLError, TimeoutError, OSError) as e:
+                # Artifact downloads are large and long-lived, so DNS blips and
+                # SSL handshake timeouts are routine. A scheduled ingest must
+                # survive them rather than lose the whole run's progress.
+                if attempt < 3:
+                    time.sleep(2 ** attempt)
+                    continue
+                raise GitHubError(f"network error for {url}: {e}") from e
         raise GitHubError(f"giving up on {url}")
 
     def _get(self, path: str, **params):

@@ -1,37 +1,40 @@
 # Podman CI flake report
 
-Generated 2026-08-16 14:13 UTC from `podman-container-tools/podman`.
+Generated 2026-08-16 14:47 UTC from `podman-container-tools/podman`.
 
-Scanned **4** failed CI runs and found **16** distinct failure patterns across **16** occurrences.
+Scanned **6** failed CI runs and found **17** distinct failure patterns across **31** occurrences.
+
+**14** pattern(s) occurred more than once; these are the strongest flake candidates.
 
 ## Patterns by frequency
 
 | # | Count | Pattern | Dimensions | Category |
 |---|-------|---------|------------|----------|
-| 1 | 1 | [26-containersWait] POST containers/WaitTestingCtr/wait?condition=next-exit [-d  | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 2 | 1 | [26-containersWait] POST containers/waitNextExit/wait?condition=next-exit [-d {} | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 3 | 1 | [26-containersWait] Received headers from /wait | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 4 | 1 | [26-containersWait] UNEXPECTED: curl on /wait returned results | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 5 | 1 | [27-containersEvents] GET /v1.52/events?stream=false&since=(T) : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 6 | 1 | [27-containersEvents] GET /v1.52/events?stream=false&since=(T)&type=remove : sta | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 7 | 1 | [27-containersEvents] GET events?stream=false&since=(T) : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 8 | 1 | [27-containersEvents] GET events?stream=false&since=(T)&type=remove : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 9 | 1 | [27-containersEvents] GET events?stream=true: expected curl to time out; it did  | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 10 | 1 | [27-containersEvents] GET libpod/events?stream=false&since=(T) : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 11 | 1 | [27-containersEvents] Received headers from /events | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 12 | 1 | [44-mounts] 'df' output includes tmpfs name | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 13 | 1 | [44-mounts] GET containers/474126533bd3b399c5c39da23f2a603538f26bda535e443ba7284 | **apiv2--rootless-fedora-current** | _uncategorized_ |
-| 14 | 1 | [44-mounts] compat mount subpath returns only selected subdir | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 1 | 2 | [26-containersWait] POST containers/WaitTestingCtr/wait?condition=next-exit [-d  | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 2 | 2 | [26-containersWait] POST containers/waitNextExit/wait?condition=next-exit [-d {} | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 3 | 2 | [26-containersWait] Received headers from /wait | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 4 | 2 | [26-containersWait] UNEXPECTED: curl on /wait returned results | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 5 | 2 | [27-containersEvents] GET /v1.52/events?stream=false&since=(T) : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 6 | 2 | [27-containersEvents] GET /v1.52/events?stream=false&since=(T)&type=remove : sta | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 7 | 2 | [27-containersEvents] GET events?stream=false&since=(T) : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 8 | 2 | [27-containersEvents] GET events?stream=false&since=(T)&type=remove : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 9 | 2 | [27-containersEvents] GET events?stream=true: expected curl to time out; it did  | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 10 | 2 | [27-containersEvents] GET libpod/events?stream=false&since=(T) : status | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 11 | 2 | [27-containersEvents] Received headers from /events | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 12 | 2 | [44-mounts] 'df' output includes tmpfs name | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 13 | 2 | [44-mounts] GET containers/474126533bd3b399c5c39da23f2a603538f26bda535e443ba7284 | **apiv2--rootless-fedora-current** | _uncategorized_ |
+| 14 | 2 | [44-mounts] compat mount subpath returns only selected subdir | **apiv2--rootless-fedora-current** | _uncategorized_ |
 | 15 | 1 | podman build with a secret from file | **int**, **remote**, **root**, **fedora-prior** | _uncategorized_ |
 | 16 | 1 | podman image rm - concurrent with shared layers | **int**, **local**, **root**, **fedora-rawhide** | _uncategorized_ |
+| 17 | 1 | podman run with attach stdin outputs container ID | **int**, **remote**, **root**, **fedora-rawhide** | _uncategorized_ |
 
 ## Details
 
 ### 1. [26-containersWait] POST containers/WaitTestingCtr/wait?condition=next-exit [-d {}] : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `59393b8bdf067847`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -45,13 +48,14 @@ Scanned **4** failed CI runs and found **16** distinct failure patterns across *
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 2. [26-containersWait] POST containers/waitNextExit/wait?condition=next-exit [-d {}] : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `dd98930571dc42df`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -65,13 +69,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 3. [26-containersWait] Received headers from /wait
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `926566d90d191a6f`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -85,13 +90,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 4. [26-containersWait] UNEXPECTED: curl on /wait returned results
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `55f1be6291fa4bed`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -105,13 +111,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 5. [27-containersEvents] GET /v1.52/events?stream=false&since=(T) : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `f8070008ea120694`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -125,13 +132,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 6. [27-containersEvents] GET /v1.52/events?stream=false&since=(T)&type=remove : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `9f981bc85cc96cbe`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -145,13 +153,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 7. [27-containersEvents] GET events?stream=false&since=(T) : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `a1d99abd8333add4`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -165,13 +174,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 8. [27-containersEvents] GET events?stream=false&since=(T)&type=remove : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `6b30b04ba1f68920`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -185,13 +195,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 9. [27-containersEvents] GET events?stream=true: expected curl to time out; it did not
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `03cae67e227ff33c`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -205,13 +216,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 10. [27-containersEvents] GET libpod/events?stream=false&since=(T) : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `6ab819339dd6300b`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -225,13 +237,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 11. [27-containersEvents] Received headers from /events
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `ef39090d54a8a666`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -245,13 +258,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 12. [44-mounts] 'df' output includes tmpfs name
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `c92c1c9634fbb6c2`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -265,13 +279,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 13. [44-mounts] GET containers/474126533bd3b399c5c39da23f2a603538f26bda535e443ba7284c0781f65ef5/logs?stdout=true : status
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `c7b9832deab9b030`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -285,13 +300,14 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 14. [44-mounts] compat mount subpath returns only selected subdir
 
-- **Occurrences:** 1
+- **Occurrences:** 2
 - **Signature:** `3542ec553dacc701`
-- **First seen:** 2026-08-15
+- **First seen:** 2026-08-14
 - **Last seen:** 2026-08-15
 - **Dimensions:** **apiv2--rootless-fedora-current**
 
@@ -305,6 +321,7 @@ Recent runs:
 
 Recent runs:
 
+- [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
 - [apiv2--rootless-fedora-current](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
 ### 15. podman build with a secret from file
@@ -347,6 +364,27 @@ Recent runs:
 
 - [int-local-root-fedora-rawhide](https://github.com/podman-container-tools/podman/actions/runs/31876401828) - pull_request, 2026-08-15
 
+### 17. podman run with attach stdin outputs container ID
+
+- **Occurrences:** 1
+- **Signature:** `b784b7e26df3dc2d`
+- **First seen:** 2026-08-14
+- **Last seen:** 2026-08-14
+- **Dimensions:** **int**, **remote**, **root**, **fedora-rawhide**
+- **Known / tracked by:** #20196
+
+<details><summary>Normalized signature</summary>
+
+```
+podman run with attach stdin outputs container ID|Unexpected warnings seen on stderr: "time=\"<TIME>\" level=warning msg=\"Failed to close STDIN for writing: close unix @->/run/podman/podman-<SHA256>.sock: use of closed network connection\""
+```
+
+</details>
+
+Recent runs:
+
+- [int-remote-root-fedora-rawhide](https://github.com/podman-container-tools/podman/actions/runs/31839624435) - pull_request, 2026-08-14
+
 
 ## Skip markers with no recent matching failure
 
@@ -361,8 +399,6 @@ These tests are skipped for a tracked flake that was not observed in the scanned
 | #14536 | `test/system/070-build.bats` | 563 |
 | #14873 | `test/system/130-kill.bats` | 143 |
 | #15464 | `test/system/200-pod.bats` | 554 |
-| #20196 | `test/e2e/restart_test.go` | 248 |
-| #20196 | `test/e2e/run_test.go` | 1843 |
 | #24230 | `test/e2e/checkpoint_test.go` | 1057 |
 | #24571 | `test/e2e/checkpoint_test.go` | 1214 |
 | #27264 | `test/system/702-artifact.bats` | 8 |
