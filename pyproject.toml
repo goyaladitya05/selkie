@@ -1,0 +1,18 @@
+[project]
+name = "selkie"
+version = "0.1.0"
+description = "Flake triage for Podman's GitHub Actions CI"
+requires-python = ">=3.10"
+# No runtime dependencies on purpose: the tool must run on any machine with
+# Python and a token, including a bare CI runner, without a pip install step.
+dependencies = []
+
+[project.scripts]
+selkie = "selkie.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["selkie*"]

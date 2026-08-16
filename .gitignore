@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local pattern database; the real one is meant to live on its own branch.
+flake-db/
+*.log.html

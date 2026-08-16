@@ -1,0 +1,63 @@
+
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00085p'>ok 85 |035| podman logs - basic test in 2947ms</a></span>
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00086p'>ok 86 |035| podman logs - tail test, journald in 3135ms</a></span>
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00087p'>ok 87 |035| podman logs - multi journald in 4326ms</a></span>
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00088p'>ok 88 |035| podman logs restarted journald in 3427ms</a></span>
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00089p'>ok 89 |035| podman logs - since journald in 4128ms</a></span>
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00090p'>ok 90 |035| podman logs - until journald in 10866ms</a></span>
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00091p'>ok 91 |035| podman logs - --follow journald in 2721ms</a></span>
+<span class="timestamp">         </span><span class='bats-passed'><a name='t--00092p'>ok 92 |035| podman logs - --since --follow journald in 9251ms</a></span>
+<span class="timestamp">         </span><span class='bats-failed'><a name='t--00093p'>not ok 93 |035| podman logs - --until --follow journald in 10466ms</a></span>
+<span class="timestamp">         </span><span class='bats-log'># tags: ci:parallel</span>
+<span class="timestamp">         </span><span class='bats-log'># (from function `bail-now&#39; in file test/system/<a class="codelink" href="https://github.com/podman-container-tools/podman/blob/327ec9861ada8e5859548e0c2fa21dd1d107cac7/test/system/helpers.bash#L230">helpers.bash, line 230</a>,</span>
+<span class="timestamp">         </span><span class='bats-log'>#  from function `assert&#39; in file test/system/<a class="codelink" href="https://github.com/podman-container-tools/podman/blob/327ec9861ada8e5859548e0c2fa21dd1d107cac7/test/system/helpers.bash#L1074">helpers.bash, line 1074</a>,</span>
+<span class="timestamp">         </span><span class='bats-log'>#  from function `_log_test_follow_until&#39; in file test/system/<a class="codelink" href="https://github.com/podman-container-tools/podman/blob/327ec9861ada8e5859548e0c2fa21dd1d107cac7/test/system/035-logs.bats#L380">035-logs.bats, line 380</a>,</span>
+<span class="timestamp">         </span><span class='bats-log'>#  in test file test/system/<a class="codelink" href="https://github.com/podman-container-tools/podman/blob/327ec9861ada8e5859548e0c2fa21dd1d107cac7/test/system/035-logs.bats#L399">035-logs.bats, line 399</a>)</span>
+<span class="timestamp">         </span><span class='bats-log'>#   `_log_test_follow_until journald&#39; failed</span>
+<span class="timestamp">         </span>#
+<span class="timestamp"><span title="12:13:49.571463316">&lt;+     &gt;</span> </span><span class='bats-log'># # <b><span title="/var/tmp/podman-container-tools/podman/bin/podman">podman</span>  run --log-driver=journald --name c-ltfu-t93-uxvehj2c -d quay.io/libpod/testimage:20241011 sh -c n=1;while :; do echo naywrox5xl--$n; n=$((n+1));sleep 0.1; done</b></span>
+<span class="timestamp"><span title="12:13:50.194350707">&lt;+622ms&gt;</span> </span><span class='bats-log'># 8cd354e7f35ffedbac06486c97a0ca3c65489cf7bd1afc9a8c5a8e8fcaa630df</span>
+<span class="timestamp">         </span>#
+<span class="timestamp"><span title="12:13:50.219297583">&lt;+024ms&gt;</span> </span><span class='bats-log'># # <b><span title="/var/tmp/podman-container-tools/podman/bin/podman">podman</span>  logs --until 3s -f c-ltfu-t93-uxvehj2c</b></span>
+<span class="timestamp"><span title="12:13:57.766834979">&lt;+7.55s&gt;</span> </span><span class='bats-log'># naywrox5xl--1</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--2</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--3</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--4</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--5</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--6</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--7</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--8</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--9</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--10</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--11</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--12</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--13</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--14</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--15</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--16</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--17</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--18</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--19</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--20</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--21</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--22</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--23</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--24</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--25</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--26</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--27</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--28</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--29</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--30</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--31</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--32</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--33</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--34</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--35</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--36</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--37</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--38</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--39</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--40</span>
+<span class="timestamp">         </span><span class='bats-log'># naywrox5xl--41</span>
+<span class="timestamp">     

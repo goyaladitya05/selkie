@@ -1,0 +1,66 @@
+
+<span class="timestamp">         </span>  &larr; Exit  [AfterEach] TOP-LEVEL - /var/tmp<a class="codelink" href='https://github.com/podman-container-tools/podman/blob/66dd4824b84e0ef869ea1d88d03d81d45eb76346/test/e2e/common_test.go#L136'>/podman-container-tools/podman/test/e2e/common_test.go:136</a> @ 08/15/26 20:38:15.787 (302ms)
+</div><span class="timestamp">         </span>  &lt;&lt; Timeline
+</div>
+<hr />
+<div class='tt'>
+<span class="timestamp">[+0350s] </span><span class="log-failed">• [FAILED] <b><span class='log-slow'>[10.082 seconds]</span></b></span>
+<span class="timestamp">         </span><a name='t--Podman-build--11' /><h2 class="log-failed">Podman build</h2>
+<span class="timestamp">         </span>/var/tmp<a class="codelink" href='https://github.com/podman-container-tools/podman/blob/66dd4824b84e0ef869ea1d88d03d81d45eb76346/test/e2e/build_test.go#L22'>/podman-container-tools/podman/test/e2e/build_test.go:22</a>
+<span class="timestamp">         </span><a name='t--Podman-build-podman-build-with-a-secret-from-file--1' /><h2 class="log-failed">  [It] podman build with a secret from file</h2>
+<span class="timestamp">         </span>  /var/tmp<a class="codelink" href='https://github.com/podman-container-tools/podman/blob/66dd4824b84e0ef869ea1d88d03d81d45eb76346/test/e2e/build_test.go#L92'>/podman-container-tools/podman/test/e2e/build_test.go:92</a>
+<span class="timestamp">         </span>
+<span class="timestamp">         </span>  Timeline &gt;&gt;
+<div class="ginkgo-timeline ginkgo-beforeeach"><span class="timestamp">         </span>  &rarr; Enter [<b>BeforeEach</b>] TOP-LEVEL - /var/tmp<a class="codelink" href='https://github.com/podman-container-tools/podman/blob/66dd4824b84e0ef869ea1d88d03d81d45eb76346/test/e2e/common_test.go#L123'>/podman-container-tools/podman/test/e2e/common_test.go:123</a> @ 08/15/26 20:38:06.108
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman"><b>podman</b></span> <span class="boring" title="--storage-opt vfs.imagestore=/tmp/podman-e2e-3064444560/imagecachedir
+--root /tmp/podman-e2e-3064444560/subtest-3528279854/p/root
+--runroot /tmp/podman-e2e-3064444560/subtest-3528279854/p/runroot
+--runtime crun
+--conmon /usr/bin/conmon
+--network-config-dir /etc/containers/networks
+--cgroup-manager systemd
+--tmpdir /tmp/podman-e2e-3064444560/subtest-3528279854/p/clitmp
+--events-backend file
+--storage-driver vfs">[options]</span><b> system service --time 0 unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock</b>
+<span class="timestamp">         </span>  &larr; Exit  [BeforeEach] TOP-LEVEL - /var/tmp<a class="codelink" href='https://github.com/podman-container-tools/podman/blob/66dd4824b84e0ef869ea1d88d03d81d45eb76346/test/e2e/common_test.go#L123'>/podman-container-tools/podman/test/e2e/common_test.go:123</a> @ 08/15/26 20:38:06.21 (102ms)
+</div><div class="ginkgo-timeline ginkgo-it"><span class="timestamp">         </span>  &rarr; Enter [<b>It</b>] podman build with a secret from file - /var/tmp<a class="codelink" href='https://github.com/podman-container-tools/podman/blob/66dd4824b84e0ef869ea1d88d03d81d45eb76346/test/e2e/build_test.go#L92'>/podman-container-tools/podman/test/e2e/build_test.go:92</a> @ 08/15/26 20:38:06.211
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman-remote"><b>podman-remote</b></span> <span class="boring" title="--url unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock">[options]</span><b> build -f build/Containerfile.with-secret -t secret-test --secret id=mysecret,src=build/secret.txt build/</b>
+<span class="timestamp">         </span>  time=<span class='log-warning'>&quot;2026-08-15T20:38:06Z&quot;</span> level=<span class='log-warning'>warning</span> msg=<span class='log-warning'>&quot;IdleTracker: StateClosed transition by connection marked un-managed&quot; X-Reference-Id=0xc00019d2c0</span>
+<span class="timestamp">         </span>  STEP 1/2: FROM alpine
+<span class="timestamp">         </span>  STEP 2/2: RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
+<span class="timestamp">         </span>  somesecret
+<span class="timestamp">         </span>  COMMIT secret-test
+<span class="timestamp">         </span>  --&gt; 720b95920c0d
+<span class="timestamp">         </span>  Successfully tagged localhost/secret-test:latest
+<span class="timestamp">         </span>  720b95920c0d1d80aafb306b1c902175a1b10782d30862384df7efbed7d0001b
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman-remote"><b>podman-remote</b></span> <span class="boring" title="--url unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock">[options]</span><b> run --rm secret-test sh -c find / -xdev -name &#39;podman-build-secret*&#39; -print</b>
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman-remote"><b>podman-remote</b></span> <span class="boring" title="--url unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock">[options]</span><b> rmi secret-test</b>
+<span class="timestamp">         </span>  Untagged: localhost/secret-test:latest
+<span class="timestamp">         </span>  Deleted: 720b95920c0d1d80aafb306b1c902175a1b10782d30862384df7efbed7d0001b
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman-remote"><b>podman-remote</b></span> <span class="boring" title="--url unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock">[options]</span><b> build -f build/remote-secret-dockerignore-star/Dockerfile -t e2e-remote-secret-dignore --secret id=MY_SECRET,type=file,src=build/remote-secret-dockerignore-star/host-secret.txt build/remote-secret-dockerignore-star</b>
+<span class="timestamp">         </span>  STEP 1/4: FROM alpine
+<span class="timestamp">         </span>  STEP 2/4: COPY . .
+<span class="timestamp">         </span>  --&gt; 2c18883df9c1
+<span class="timestamp">         </span>  STEP 3/4: RUN test ! -e ignored-by-dockerignore.txt
+<span class="timestamp">         </span>  --&gt; 214836090d6b
+<span class="timestamp">         </span>  STEP 4/4: RUN --mount=type=secret,id=MY_SECRET cat /run/secrets/MY_SECRET
+<span class="timestamp">         </span>  Super Secret
+<span class="timestamp">         </span>  COMMIT e2e-remote-secret-dignore
+<span class="timestamp">         </span>  --&gt; f55b90122f5d
+<span class="timestamp">         </span>  Successfully tagged localhost/e2e-remote-secret-dignore:latest
+<span class="timestamp">         </span>  f55b90122f5d875e15d8fe211ffce21e22ba7f9bc2d8b72353ecdc638f414d73
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman-remote"><b>podman-remote</b></span> <span class="boring" title="--url unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock">[options]</span><b> run --rm e2e-remote-secret-dignore sh -c find / -xdev -name &#39;podman-build-secret*&#39; -print</b>
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman-remote"><b>podman-remote</b></span> <span class="boring" title="--url unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock">[options]</span><b> rmi e2e-remote-secret-dignore</b>
+<span class="timestamp">         </span>  Untagged: localhost/e2e-remote-secret-dignore:latest
+<span class="timestamp">         </span>  Deleted: f55b90122f5d875e15d8fe211ffce21e22ba7f9bc2d8b72353ecdc638f414d73
+<span class="timestamp">         </span>  Deleted: 214836090d6b0d5ed002a41278d3bd191c9734171876aa4ba986b67e6c669479
+<span class="timestamp">         </span>  Deleted: 2c18883df9c11167584471799776b572e3c66370295c27e59914bafa0a02113d
+<span class="timestamp">         </span><span class="boring">  #</span> <span title="/var/tmp/podman-container-tools/podman/bin/podman-remote"><b>podman-remote</b></span> <span class="boring" title="--url unix:///run/podman/podman-0e9a4329a1e2645074048d6f5fc55bb770aab2e31a75e34002bb9cbf8747557f.sock">[options]</span><b> build -f build/Containerfile.with-multiple-secret -t multiple-secret-test --secret id=mysecret,src=build/secret.txt --secret id=mysecret2,src=build/anothersecret.txt build/</b>
+<span class="timestamp">         </span>  time=<span class='log-error'>&quot;2026-08-15T20:38:15Z&quot;</span> level=<span class='log-error'>error</span> msg=<span class='log-error'>&quot;failed to close build request body: 1 error occurred:\n\t* lstat /var/tmp/podman-container-tools/podman/test/e2e/build/remote-secret-copy/podman-build-secret-1857193326: no such file or directory\n\n\n&quot;</span>
+<span class="timestamp">         </span><span class='log-warning'>  Error: Post &quot;http://d/v6.2.0/libpod/build?compressionFormat=gzip&amp;dockerfile=%5B%22Containerfile.with-multiple-secret%22%5D&amp;forceCompressionFormat=1&amp;forcerm=1&amp;httpproxy=1&amp;idmappingoptions=%7B%22HostUIDMapping%22%3Atrue%2C%22HostGIDMapping%22%3Atrue%2C%22UIDMap%22%3A%5B%5D%2C%22GIDMap%22%3A%5B%5D%2C%22AutoUserNs%22%3Afalse%2C%22AutoUserNsOpts%22%3A%7B%22Size%22%3A0%2C%22InitialSize%22%3A0%2C%22PasswdFile%22%3A%22%22%2C%22GroupFile%22%3A%22%22%2C%22AdditionalUIDMappings%22%3Anull%2C%22AdditionalGIDMappings%22%3Anull%7D%7D&amp;inheritannotations=1&amp;isolation=0&amp;jobs=1&amp;layers=1&amp;networkmode=0&amp;nsoptions=%5B%7B%22Name%22%3A%22user%22%2C%22Host%22%3Atrue%2C%22Path%22%3A%22%22%7D%5D&amp;omithistory=0&amp;output=multiple-secret-test&amp;outputformat=application%2Fvnd.oci.image.manifest.v1%2Bjson&amp;pullpolicy=missing&amp;retry=3&amp;retry-delay=2s&amp;rewritetimestamp=0&amp;rm=1&amp;secrets=%5B%22id%3Dmysecret%2Csrc%3Dpodman-build-secret-3514236085%22%2C%22id%3Dmysecret2%2Csrc%3Dpodman-build-secret-3549214205%22%5D&amp;shmsize=67108864&amp;t=multiple-secret-test&quot;: io: read/write on closed pipe</span>
+<div class='log-error'>
+<span class="timestamp">         </span>  [FAILED] Command failed with exit status 125. See above for error message.
+<span class="timestamp">         </span>  In [It] at: /var/tmp<a class="codelink" href='https://github.com/podman-container-tools/podman/blob/66dd4824b84e0ef869ea1d88d03d81d45eb76346/test/e2e/build_test.go#L116'>/podman-container-tools/podman/test/e2e/build_test.go:116</a> @ 08/15/26 20:38:15.857
+<span class="timestamp">         </span>
+<span class="timestamp">         </span>  Full Stack Trace
+<span class="timestamp">         </span>    go.podman.io/podman/v6/test/e2e.(*PodmanTestIntegration).PodmanExitCleanlyWithOptions(0xc0004c5600, {{0x0, 0x0}, {0x0, 0x0, 0x0}, 0x0, 0x0, {0x0, 0x0, ...}, ...}, ...)
